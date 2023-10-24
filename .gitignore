@@ -78,3 +78,8 @@ config.yaml
 sequences/
 vots2023*
 multiobject
+
+# Custom
+
+*.out
+!/logs/.gitkeep
