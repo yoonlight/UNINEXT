@@ -74,7 +74,8 @@ class Trainer(DefaultTrainer):
         if evaluator_type == "lvis":
             evaluator_list.append(LVISEvaluator(dataset_name, cfg, True, output_folder))
         elif evaluator_type == "coco":
-            force_tasks = {"bbox"} if "objects365" in cfg.DATASETS.TRAIN[0] else None
+            # force_tasks = {"bbox"} if "objects365" in cfg.DATASETS.TRAIN[0] else None
+            force_tasks= {"segm", "bbox"}
             if "refcoco" in dataset_name:
                 evaluator_list.append(COCOEvaluator(dataset_name, cfg, True, output_folder, force_tasks=force_tasks, refcoco=True))
             elif "coco" in dataset_name or "objects365" in dataset_name or "seginw" in dataset_name:

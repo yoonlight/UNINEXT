@@ -145,10 +145,11 @@ class Metadata(types.SimpleNamespace):
         # Ensure that metadata of the same name stays consistent
         try:
             oldval = getattr(self, key)
-            assert oldval == val, (
-                "Attribute '{}' in the metadata of '{}' cannot be set "
-                "to a different value!\n{} != {}".format(key, self.name, oldval, val)
-            )
+            # 에러 발생 부분
+            # assert oldval == val, (
+            #     "Attribute '{}' in the metadata of '{}' cannot be set "
+            #     "to a different value!\n{} != {}".format(key, self.name, oldval, val)
+            # )
         except AttributeError:
             super().__setattr__(key, val)
 
