@@ -83,3 +83,4 @@ multiobject
 
 *.out
 !/logs/.gitkeep
+!devcontainer.json
