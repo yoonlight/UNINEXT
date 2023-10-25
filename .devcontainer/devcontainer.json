@@ -1,0 +1,31 @@
+{
+	"name": "UNINEXT",
+	"build": { "dockerfile": "Dockerfile" },
+	"runArgs": [
+	  "--gpus=all",
+	  "--ipc=host"
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/git:1.1.6": {},
+		"ghcr.io/devcontainers-contrib/features/wget-apt-get": {}
+	},
+	"updateContentCommand": "bash .devcontainer/install.sh",
+	"postCreateCommand": [
+		"nvidia-smi"
+	],
+	"customizations": {
+	  "vscode": {
+		"extensions": [
+		  "ms-python.python",
+		  "ms-toolsai.jupyter",
+		  "ms-toolsai.vscode-jupyter-cell-tags",
+		  "ms-toolsai.jupyter-keymap",
+		  "ms-toolsai.jupyter-renderers",
+		  "ms-toolsai.vscode-jupyter-slideshow",
+		  "ms-python.vscode-pylance"
+		]
+	  }
+	},
+	"shutdownAction": "none"
+	// "remoteUser": "vscode"
+}
