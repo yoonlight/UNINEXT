@@ -5,14 +5,16 @@ MODEL:
   MASK_ON: True
 DATASETS:
   TRAIN: ("coco_2017_train", )
-  TEST: ("coco_2017_val", ) # "coco_2017_test-dev"
+  # TEST: ("coco_2017_val", ) # "coco_2017_test-dev"
 SOLVER:
   IMS_PER_BATCH: 240 # batch-per-gpu = 80
-  STEPS: (9600,) # 100 epoch
-  MAX_ITER: 12000 # 48 epoch
+  STEPS: (120000,) # 100 epoch
+  MAX_ITER: 127000 # 48 epoch
 DATALOADER:
   DATASET_RATIO: [1,1]
   DATASET_BS: [2,2]
   USE_RFS: [False, False]
   FILTER_EMPTY_ANNOTATIONS: False
 OUTPUT_DIR: outputs/single_task_bridge_crack
+TEST:
+  EVAL_PERIOD: 0
