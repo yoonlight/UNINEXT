@@ -6,6 +6,15 @@
 FILE_NAME=20231017_02 && nohup python3 launch.py --np 3 --nn 1 --uni 1 --config-file projects/UNINEXT/configs/single_task_bridge_crack.yaml > $FILE_NAME.out 2>&1 &
 ```
 
+- resume
+
+```shell
+EXP_CONFIG=single_task_bridge_crack && DATE=20231025_01 && nohup python3 launch.py \
+--np 1 --nn 1 --uni 1 --config-file projects/UNINEXT/configs/$EXP_CONFIG.yaml \
+--resume OUTPUT_DIR outputs/${EXP_CONFIG} \
+>> $DATE-$EXP_CONFIG.out 2>&1 &
+```
+
 - evaluate
 
 ```shell
